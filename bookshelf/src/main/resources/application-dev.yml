@@ -1,0 +1,10 @@
+# application-dev.yml — 开发环境配置（Lab 8 动手练习）
+#
+# TODO(Lab8): 参考 Lab8-配置管理.md 第 "方法一：多配置文件" 一节，
+# 在这里配置开发环境专用的数据源、日志级别、业务开关。
+# 提示：需要覆盖的内容包括
+#   spring.datasource（H2）
+#   spring.jpa.hibernate.ddl-auto（create-drop）
+#   spring.jpa.show-sql（true）
+#   logging.level（DEBUG）
+#   app.bookshelf.cache-enabled（false，方便调试）

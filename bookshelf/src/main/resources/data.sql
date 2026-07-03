@@ -1,0 +1,7 @@
+-- data.sql — 启动时自动灌入的测试数据（Lab 4 动手练习）
+--
+-- TODO(Lab4): 参考 Lab4-数据持久化JPA.md，往 books 表插入几条测试数据。
+-- 注意：字段名要和 Book 实体类里 @Column 对应的列名一致。
+-- 例如：
+-- INSERT INTO books (title, author, isbn, category, price, stock) VALUES
+-- ('Java 编程思想', 'Bruce Eckel', '978-0131872494', '技术', 89.00, 100);

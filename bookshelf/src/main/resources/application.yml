@@ -1,0 +1,53 @@
+# application.yml — 公共配置
+# Lab 0 已经把数据库和 H2 控制台配好了，直接可以运行
+spring:
+  application:
+    name: bookshelf
+
+  # H2 内存数据库配置
+  datasource:
+    url: jdbc:h2:mem:bookshelfdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  # JPA 配置
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop   # 启动时建表，停止时删表（开发环境用）
+    show-sql: true             # 控制台打印 SQL 语句，方便调试
+
+  # TODO(Lab4): 加上 sql.init.mode: always，让 src/main/resources/data.sql 在启动时自动执行
+  # sql:
+  #   init:
+  #     mode: always
+
+  # TODO(Lab8): 加上 profiles.active: dev，并创建 application-dev.yml / application-prod.yml
+  # profiles:
+  #   active: dev
+
+  # H2 控制台（浏览器可视化数据库，开发用）
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+# 服务器配置
+server:
+  port: 8080
+
+# TODO(Lab1): 加上自定义配置，配合 @Value 使用：
+# app:
+#   name: 书架管理系统
+#   version: 1.0.0
+#   max-books-per-page: 20
+
+# TODO(Lab8): 加上 app.bookshelf.* 配置，配合 @ConfigurationProperties(prefix = "app.bookshelf") 使用：
+# app:
+#   bookshelf:
+#     max-books-per-page: 20
+#     default-category: 综合
+#     low-stock-threshold: 10
+#     cache-enabled: false
+#     audit-log-enabled: false
